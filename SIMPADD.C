@@ -1,8 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    int a,b,c,t;
-    int i=1;
+    int a,b,c,d,e,i=1,k=1,t,o=0;
     printf("--------- Simple+ ---------\n");
     printf("       By LimaXRomeo       \n\n");
     printf("Type two demical numbers and I'll add them together.\n");
@@ -14,18 +13,31 @@ int main()
 	printf("+");
 	scanf("%d",&b);
 	t=a+b;
-	printf("\n----------\n=%d\n\nOct: %o\nHex: %x\n\n",t,t,t);
+	e=a+b;
+	while(e)
+	{
+	    d=e%2;
+	    e=e/2;
+	    o=o+d*k;
+	    k=k*10;
+	}
+	printf("\n----------\n=%d\n\nOct: %#o\nHex: %#x\n\n",t,t,t);
 	printf("Press 0 and then ENTER to exit.\n");
-	printf("Type any other NUMBERS then ENTER to continue.\n");
-	scanf("%d",&c);
+	printf("Type 1 then ENTER to continue.\n");
+    loop:scanf("%d",&c);
 	if (c==0)
 	{
 	    return 0;
 	}
-	else
+	else if (c==1)
 	{
 	    printf("\nPlease continue.\n ");
 	}
+	else
+	{
+	    printf("Invalid!\n");
+	    goto loop;
+	}
     }
-return 0;
+return 1;
 }
